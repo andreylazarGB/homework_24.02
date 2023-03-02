@@ -7,10 +7,10 @@ Console.Clear();
 
 int Length = Prompt("Длина массива: ");
 int min = Prompt("Начальное значение, для диапозона случайного числа: ");
-//int min1 = GetNumber(min);
+int min1 = GetNumber(min);
 int max = Prompt("Конечное значение, для диапозона случайного числа: ");
-//int max2 = GetNumber(max);
-int[] array = FillArray(Length, min, max);
+int max2 = GetNumber(max);
+int[] array = FillArray(Length, min1, max2);
 Console.WriteLine($"В массиве [{string.Join(", ", array)}] количество четных чисел равно {GetCountEvenNumbers(array)}");
 
 
@@ -21,15 +21,16 @@ int Prompt(string massage)
     return result;
 }
 
-// ВОПРОС КАК ПРЕКРАТИТЬ ВЫПОЛНЕНИЕ И ВЕРНУТЬСЯ К ВВОДУ ЧИСЛА???
-/*int GetNumber(int x1)
+// ВОПРОС!!! КАК  НЕ ПРЕКРАЩАЯ ВЫПОЛНЕНИЯ В КОНСОЛЕ, ВЕРНУТЬСЯ К ВВОДУ ЧИСЛА???
+int GetNumber(int x1)
 {
     if (x1 < 99 || x1 > 999)
     {
-        Console.WriteLine("Число не трехзначное!!!");
+        Console.WriteLine("Введите трехзначное положительное число!!!");
+        Environment.Exit(0);
     }
     return x1;
-}*/
+}
 
 int[] FillArray(int size, int minX, int max)
 {
